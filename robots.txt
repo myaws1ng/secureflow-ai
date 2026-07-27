@@ -107,8 +107,376 @@ Sitemap: https://secureflow.ai/sitemap.xml
 
 
 
+# =====================================================
+# SEARCH ENGINE SPECIFIC RULES
+# =====================================================
+
 
 
 # =====================================================
+# Google Search Crawler
+# =====================================================
+
+User-agent: Googlebot
+
+Allow: /
+
+
+
+# =====================================================
+# Google Image Crawler
+# =====================================================
+
+User-agent: Googlebot-Image
+
+Allow: /images/
+
+Allow: /
+
+
+
+
+
+# =====================================================
+# Bing Search Crawler
+# =====================================================
+
+User-agent: Bingbot
+
+Allow: /
+
+
+
+
+
+# =====================================================
+# Yahoo Search Crawler
+# =====================================================
+
+User-agent: Slurp
+
+Allow: /
+
+
+
+
+
+# =====================================================
+# DuckDuckGo / Other Search Crawlers
+# =====================================================
+
+User-agent: DuckDuckBot
+
+Allow: /
+
+
+
+
+
+# =====================================================
+# AI Crawlers
+# =====================================================
+
+
+# OpenAI crawler
+
+User-agent: GPTBot
+
+Allow: /
+
+
+
+# ChatGPT user browsing crawler
+
+User-agent: ChatGPT-User
+
+Allow: /
+
+
+
+# Google AI training crawler
+
+User-agent: Google-Extended
+
+Allow: /
+
+
+
+# Anthropic crawler
+
+User-agent: ClaudeBot
+
+Allow: /
+
+
+
+# Common Crawl
+
+User-agent: CCBot
+
+Allow: /
+
+
+
+
+
+# =====================================================
+# SOCIAL MEDIA PREVIEW CRAWLERS
+# =====================================================
+
+
+# Facebook / Meta crawler
+
+User-agent: facebookexternalhit
+
+Allow: /
+
+
+
+# LinkedIn crawler
+
+User-agent: LinkedInBot
+
+Allow: /
+
+
+
+# X / Twitter crawler
+
+User-agent: Twitterbot
+
+Allow: /
+
+
+
+
+
+# =====================================================
+# SECURITY SCANNER RESTRICTIONS
+# =====================================================
+
+
+# Block aggressive or unknown crawlers
+
+User-agent: AhrefsBot
+
+Disallow: /
+
+
+
+User-agent: SemrushBot
+
+Disallow: /
+
+
+
+User-agent: MJ12bot
+
+Disallow: /
+
+
+
+
+
+# =====================================================
+# IMAGE AND MEDIA POLICY
+# =====================================================
+
+
+# Allow public marketing images
+
+User-agent: *
+
+Allow: /images/
+
+Allow: /css/
+
+Allow: /js/
+
+
+
+
+
+# =====================================================
+# END OF ROBOTS.TXT PART 2
+# =====================================================
+
+# =====================================================
 # End of robots.txt Part 1
+# =====================================================
+# =====================================================
+# CRAWL MANAGEMENT
+# =====================================================
+
+
+# General crawler behaviour
+
+User-agent: *
+
+# Avoid excessive crawling pressure
+
+Crawl-delay: 5
+
+
+
+
+
+# =====================================================
+# IMPORTANT PUBLIC ASSETS
+# =====================================================
+
+
+# Allow website resources required for rendering
+
+Allow: /css/
+
+Allow: /js/
+
+Allow: /images/
+
+Allow: /assets/
+
+
+
+
+
+# =====================================================
+# BLOCK DUPLICATE OR TRACKING URLS
+# =====================================================
+
+
+# Block common tracking parameters
+
+Disallow: /*?utm_
+
+Disallow: /*?fbclid=
+
+Disallow: /*?gclid=
+
+
+
+
+
+# =====================================================
+# BLOCK SYSTEM FILES
+# =====================================================
+
+
+Disallow: /.git
+
+Disallow: /.github
+
+Disallow: /.well-known/
+
+Disallow: /config/
+
+Disallow: /scripts/
+
+Disallow: /src/
+
+
+
+
+
+# =====================================================
+# AI CONTENT USAGE POLICY
+# =====================================================
+
+
+# AI crawler access is currently allowed.
+#
+# This allows:
+# - Search discovery
+# - AI-assisted browsing
+# - Website indexing
+#
+# To restrict AI training crawlers,
+# change Allow: / to Disallow: /
+# for the relevant AI user agents.
+
+
+
+User-agent: GPTBot
+
+Allow: /
+
+
+
+User-agent: ClaudeBot
+
+Allow: /
+
+
+
+User-agent: Google-Extended
+
+Allow: /
+
+
+
+
+
+# =====================================================
+# SEO PAGE PRIORITY GUIDANCE
+# =====================================================
+
+
+# High-value business pages
+
+Allow: /index.html
+
+Allow: /services.html
+
+Allow: /pricing.html
+
+Allow: /case-studies.html
+
+Allow: /about.html
+
+Allow: /faq.html
+
+Allow: /contact.html
+
+
+
+
+
+# Legal and trust pages
+
+Allow: /privacy.html
+
+Allow: /terms.html
+
+
+
+
+
+# =====================================================
+# SITEMAP
+# =====================================================
+
+
+Sitemap: https://secureflow.ai/sitemap.xml
+
+
+
+
+
+# =====================================================
+# ROBOTS.TXT MAINTENANCE NOTES
+# =====================================================
+#
+# Update this file when:
+#
+# 1. New public pages are added
+# 2. Website structure changes
+# 3. Private directories are created
+# 4. AI crawler preferences change
+#
+# Validate using:
+# - Google Search Console robots.txt tester
+# - Bing Webmaster Tools
+#
+# =====================================================
+# END OF SECUREFLOW AI ROBOTS.TXT
 # =====================================================
