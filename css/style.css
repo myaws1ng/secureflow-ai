@@ -625,3 +625,513 @@ nav a:hover{
     margin-bottom:25px;
 
 }
+/* ==========================================================================
+   SERVICES
+   ========================================================================== */
+
+#services{
+    background:var(--background);
+}
+
+#services .card{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+
+#services ul{
+    margin-top:20px;
+}
+
+#services li{
+    padding:10px 0;
+    color:var(--text-light);
+    border-bottom:1px solid var(--border);
+    font-size:.95rem;
+}
+
+#services li:last-child{
+    border:none;
+}
+
+#services .btn{
+    margin-top:40px;
+}
+
+
+/* ==========================================================================
+   WHY CHOOSE US
+   ========================================================================== */
+
+#why{
+    background:var(--surface);
+}
+
+#why .card{
+    text-align:center;
+}
+
+#why .card-icon{
+    margin:0 auto 25px;
+}
+
+#why h3{
+    margin-bottom:15px;
+}
+
+
+/* ==========================================================================
+   PROCESS
+   ========================================================================== */
+
+.process-step{
+
+    position:relative;
+
+}
+
+.process-step::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:32px;
+
+    right:-15px;
+
+    width:30px;
+
+    height:2px;
+
+    background:var(--border);
+
+}
+
+.process-step:last-child::after{
+
+    display:none;
+
+}
+
+
+/* ==========================================================================
+   FEATURE LIST
+   ========================================================================== */
+
+.feature-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.feature-icon{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#dbeafe;
+
+    color:var(--primary);
+
+    font-size:20px;
+
+    flex-shrink:0;
+
+}
+
+.feature-text h4{
+
+    margin-bottom:5px;
+
+}
+
+.feature-text p{
+
+    margin:0;
+
+}
+
+
+/* ==========================================================================
+   PRICING
+   ========================================================================== */
+
+.pricing-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:center;
+
+}
+
+.pricing-card h2{
+
+    font-size:3rem;
+
+    margin:20px 0;
+
+}
+
+.pricing-card h2 small{
+
+    font-size:1rem;
+
+    color:var(--text-light);
+
+}
+
+.pricing-card ul{
+
+    margin:30px 0;
+
+}
+
+.pricing-card li{
+
+    padding:12px 0;
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--text-light);
+
+}
+
+.pricing-card li:last-child{
+
+    border:none;
+
+}
+
+.pricing-card .btn{
+
+    width:100%;
+
+}
+
+.popular{
+
+    border:2px solid var(--primary);
+
+    transform:scale(1.04);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.popular::before{
+
+    content:"Most Popular";
+
+    position:absolute;
+
+    top:18px;
+
+    right:-38px;
+
+    width:160px;
+
+    text-align:center;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:8px;
+
+    transform:rotate(45deg);
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================================================
+   CTA SECTION
+   ========================================================================== */
+
+.cta{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #4f46e5
+    );
+
+    color:white;
+
+    text-align:center;
+
+    border-radius:32px;
+
+    padding:70px;
+
+}
+
+.cta h2{
+
+    color:white;
+
+}
+
+.cta p{
+
+    color:rgba(255,255,255,.85);
+
+    max-width:700px;
+
+    margin:auto auto 35px;
+
+}
+
+
+/* ==========================================================================
+   TESTIMONIALS
+   ========================================================================== */
+
+.testimonial{
+
+    position:relative;
+
+}
+
+.testimonial::before{
+
+    content:"★★★★★";
+
+    color:#f59e0b;
+
+    letter-spacing:4px;
+
+    display:block;
+
+    margin-bottom:20px;
+
+}
+
+.testimonial-author{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.avatar{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:#dbeafe;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.author-info strong{
+
+    display:block;
+
+}
+
+.author-info span{
+
+    color:var(--text-light);
+
+    font-size:.9rem;
+
+}
+
+
+/* ==========================================================================
+   LOGO STRIP
+   ========================================================================== */
+
+.logo-strip{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:60px;
+
+    flex-wrap:wrap;
+
+    opacity:.65;
+
+}
+
+.logo-item{
+
+    font-weight:700;
+
+    font-size:1.15rem;
+
+    color:var(--text-light);
+
+}
+
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer{
+
+    background:var(--secondary);
+
+    color:white;
+
+    padding:80px 20px 40px;
+
+}
+
+footer h3{
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+footer p{
+
+    color:rgba(255,255,255,.7);
+
+}
+
+footer ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+footer a{
+
+    color:rgba(255,255,255,.7);
+
+    transition:var(--transition);
+
+}
+
+footer a:hover{
+
+    color:white;
+
+}
+
+footer hr{
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+}
+
+footer .copyright{
+
+    text-align:center;
+
+    color:rgba(255,255,255,.5);
+
+    margin-top:30px;
+
+}
+
+
+/* ==========================================================================
+   SECTION BACKGROUNDS
+   ========================================================================== */
+
+.bg-light{
+
+    background:var(--background);
+
+}
+
+.bg-white{
+
+    background:var(--surface);
+
+}
+
+.bg-primary{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.bg-primary p{
+
+    color:rgba(255,255,255,.85);
+
+}
+
+
+/* ==========================================================================
+   DIVIDERS
+   ========================================================================== */
+
+.divider{
+
+    width:80px;
+
+    height:5px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    margin:20px auto 50px;
+
+}
