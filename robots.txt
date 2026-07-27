@@ -1,0 +1,114 @@
+# =====================================================
+# SecureFlow AI - robots.txt
+#
+# Purpose:
+# - Guide search engine crawlers
+# - Allow website indexing
+# - Protect private/system files
+# =====================================================
+
+
+# Allow all legitimate search engines
+
+User-agent: *
+
+Allow: /
+
+
+
+
+
+# =====================================================
+# Block private or unnecessary directories
+# =====================================================
+
+
+Disallow: /admin/
+
+Disallow: /private/
+
+Disallow: /backup/
+
+Disallow: /tmp/
+
+Disallow: /logs/
+
+
+
+
+
+# =====================================================
+# Block development files
+# =====================================================
+
+
+Disallow: /.git/
+
+Disallow: /.github/
+
+Disallow: /node_modules/
+
+Disallow: /vendor/
+
+
+
+
+
+# =====================================================
+# Block configuration files
+# =====================================================
+
+
+Disallow: /*.json$
+
+Disallow: /*.config$
+
+Disallow: /*.env$
+
+Disallow: /*.bak$
+
+
+
+
+
+# =====================================================
+# Allow important public pages
+# =====================================================
+
+
+Allow: /index.html
+
+Allow: /services.html
+
+Allow: /pricing.html
+
+Allow: /case-studies.html
+
+Allow: /about.html
+
+Allow: /faq.html
+
+Allow: /contact.html
+
+Allow: /privacy.html
+
+Allow: /terms.html
+
+
+
+
+
+# =====================================================
+# Sitemap location
+# =====================================================
+
+
+Sitemap: https://secureflow.ai/sitemap.xml
+
+
+
+
+
+# =====================================================
+# End of robots.txt Part 1
+# =====================================================
