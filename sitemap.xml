@@ -25,7 +25,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 
     <loc>
-    https://secureflow.ai/
+    https://secureflow.linkpc.net/
     </loc>
 
     <lastmod>
@@ -54,7 +54,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 
     <loc>
-    https://secureflow.ai/services.html
+    https://secureflow.linkpc.net/services.html
     </loc>
 
     <lastmod>
@@ -83,7 +83,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 
     <loc>
-    https://secureflow.ai/pricing.html
+    https://secureflow.linkpc.net/pricing.html
     </loc>
 
     <lastmod>
@@ -112,7 +112,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 
     <loc>
-    https://secureflow.ai/case-studies.html
+    https://secureflow.linkpc.net/case-studies.html
     </loc>
 
     <lastmod>
@@ -141,7 +141,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 
     <loc>
-    https://secureflow.ai/about.html
+    https://secureflow.linkpc.net/about.html
     </loc>
 
     <lastmod>
@@ -169,7 +169,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 
     <loc>
-    https://secureflow.ai/faq.html
+    https://secureflow.linkpc.net/faq.html
     </loc>
 
     <lastmod>
@@ -198,7 +198,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 
     <loc>
-    https://secureflow.ai/contact.html
+    https://secureflow.linkpc.net/contact.html
     </loc>
 
     <lastmod>
@@ -227,7 +227,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 
     <loc>
-    https://secureflow.ai/privacy.html
+    https://secureflow.linkpc.net/privacy.html
     </loc>
 
     <lastmod>
@@ -256,7 +256,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 
     <loc>
-    https://secureflow.ai/terms.html
+    https://secureflow.linkpc.net/terms.html
     </loc>
 
     <lastmod>
@@ -291,7 +291,7 @@ Example:
 <url>
 
     <loc>
-    https://secureflow.ai/ai-consulting.html
+    https://secureflow.linkpc.net/ai-consulting.html
     </loc>
 
     <lastmod>
@@ -336,7 +336,7 @@ Example:
 <url>
 
     <loc>
-    https://secureflow.ai/blog.html
+    https://secureflow.linkpc.net/blog.html
     </loc>
 
     <lastmod>
@@ -379,7 +379,7 @@ Example:
 <image:image>
 
     <image:loc>
-    https://secureflow.ai/images/ai-automation.jpg
+    https://secureflow.linkpc.net/images/ai-automation.jpg
     </image:loc>
 
 </image:image>
@@ -409,14 +409,14 @@ Example:
 <url>
 
     <loc>
-    https://secureflow.ai/services.html
+    https://secureflow.linkpc.net/services.html
     </loc>
 
 
     <image:image>
 
         <image:loc>
-        https://secureflow.ai/images/ai-automation.jpg
+        https://secureflow.linkpc.net/images/ai-automation.jpg
         </image:loc>
 
 
@@ -449,7 +449,7 @@ Example:
 <video:video>
 
     <video:thumbnail_loc>
-    https://secureflow.ai/images/video-thumb.jpg
+    https://secureflow.linkpc.net/images/video-thumb.jpg
     </video:thumbnail_loc>
 
 
