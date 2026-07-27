@@ -439,20 +439,16 @@ function initializeHeader() {
 // CONTACT FORM VALIDATION
 // =====================================================
 
-
 function initializeContactForm() {
 
 
-    const forms =
-        document.querySelectorAll(
-            "form"
+    const form =
+        document.getElementById(
+            "contactForm"
         );
 
 
-
-    if (
-        forms.length === 0
-    ) {
+    if (!form) {
 
         return;
 
@@ -460,136 +456,106 @@ function initializeContactForm() {
 
 
 
+    form.addEventListener(
+        "submit",
+        async function(event) {
 
-    forms.forEach(
-        function(form) {
 
-
-
-            form.addEventListener(
-                "submit",
-                function(event) {
+            event.preventDefault();
 
 
 
-                    event.preventDefault();
+            const button =
+                form.querySelector(
+                    "button"
+                );
+
+
+            button.disabled = true;
+
+            button.innerHTML =
+                "Sending...";
 
 
 
-                    const submitButton =
-                        form.querySelector(
-                            "button[type='submit']"
-                        );
+            const data =
+                new FormData(form);
 
 
 
-                    const name =
-                        form.querySelector(
-                            "input[name='name']"
-                        );
+            try {
 
 
+                const response =
+                    await fetch(
+                        form.action,
+                        {
+                            method:
+                                "POST",
 
-                    const email =
-                        form.querySelector(
-                            "input[name='email']"
-                        );
+                            body:
+                                data,
 
-
-
-                    if (
-                        name &&
-                        name.value.trim() === ""
-                    ) {
-
-
-                        showFormMessage(
-                            form,
-                            "Please enter your name.",
-                            "error"
-                        );
-
-
-                        return;
-
-
-                    }
-
-
-
-
-                    if (
-                        email &&
-                        !validateEmail(
-                            email.value
-                        )
-                    ) {
-
-
-                        showFormMessage(
-                            form,
-                            "Please enter a valid email address.",
-                            "error"
-                        );
-
-
-                        return;
-
-
-                    }
-
-
-
-
-                    setButtonLoading(
-                        submitButton,
-                        true
+                            headers:
+                            {
+                                Accept:
+                                "application/json"
+                            }
+                        }
                     );
 
 
 
-                    /*
-                    Replace this section with:
-                    - Formspree
-                    - Netlify Forms
-                    - EmailJS
-                    - Backend API
-
-                    Example currently simulates
-                    successful submission.
-                    */
+                if (
+                    response.ok
+                ) {
 
 
-
-                    setTimeout(
-                        function() {
-
-
-                            setButtonLoading(
-                                submitButton,
-                                false
-                            );
-
-
-                            showFormMessage(
-                                form,
-                                "Thank you. Your enquiry has been submitted.",
-                                "success"
-                            );
-
-
-                            form.reset();
-
-
-
-                        },
-                        1500
+                    showFormMessage(
+                        form,
+                        "Thank you. Your enquiry has been received.",
+                        "success"
                     );
 
+
+                    form.reset();
+
+
+                } else {
+
+
+                    throw new Error(
+                        "Submission failed"
+                    );
 
 
                 }
-            );
+
+
+
+            }
+            catch(error)
+            {
+
+
+                showFormMessage(
+                    form,
+                    "Unable to send enquiry. Please try again.",
+                    "error"
+                );
+
+
+            }
+
+
+
+            button.disabled =
+                false;
+
+
+            button.innerHTML =
+                "Send Enquiry";
+
 
 
         }
@@ -597,10 +563,6 @@ function initializeContactForm() {
 
 
 }
-
-
-
-
 
 
 // =====================================================
