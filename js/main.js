@@ -3,13 +3,13 @@
  SecureFlow AI Website JavaScript
  main.js
 
- Part 1
+ Part 1 (Final)
 
  Features:
  - Mobile navigation
  - FAQ accordion
  - Smooth scrolling
- - Header behaviour
+ - Header scroll behaviour
 =====================================================
 */
 
@@ -17,6 +17,7 @@
 // =====================================================
 // WAIT FOR PAGE LOAD
 // =====================================================
+
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -39,6 +40,7 @@ document.addEventListener(
 
     }
 );
+
 
 
 
@@ -75,6 +77,7 @@ function initializeMobileMenu() {
 
 
 
+
     menuToggle.addEventListener(
         "click",
         function () {
@@ -95,9 +98,6 @@ function initializeMobileMenu() {
 
 
 
-    /*
-    Close menu when clicking a link
-    */
 
 
     const navLinks =
@@ -108,12 +108,12 @@ function initializeMobileMenu() {
 
 
     navLinks.forEach(
-        function (link) {
+        function(link) {
 
 
             link.addEventListener(
                 "click",
-                function () {
+                function() {
 
 
                     navMenu.classList.remove(
@@ -134,8 +134,9 @@ function initializeMobileMenu() {
     );
 
 
-
 }
+
+
 
 
 
@@ -167,8 +168,9 @@ function initializeFAQ() {
 
 
 
+
     faqItems.forEach(
-        function (item) {
+        function(item) {
 
 
             const question =
@@ -198,24 +200,18 @@ function initializeFAQ() {
 
             question.addEventListener(
                 "click",
-                function () {
+                function() {
 
 
-
-                    const currentlyOpen =
+                    const isOpen =
                         item.classList.contains(
                             "active"
                         );
 
 
 
-                    /*
-                    Close all FAQ items
-                    */
-
-
                     faqItems.forEach(
-                        function (faq) {
+                        function(faq) {
 
 
                             faq.classList.remove(
@@ -228,14 +224,8 @@ function initializeFAQ() {
 
 
 
-
-                    /*
-                    Open selected item
-                    */
-
-
                     if (
-                        !currentlyOpen
+                        !isOpen
                     ) {
 
 
@@ -247,10 +237,8 @@ function initializeFAQ() {
                     }
 
 
-
                 }
             );
-
 
 
         }
@@ -258,6 +246,7 @@ function initializeFAQ() {
 
 
 }
+
 
 
 
@@ -280,13 +269,12 @@ function initializeSmoothScroll() {
 
 
     links.forEach(
-        function (link) {
+        function(link) {
 
 
             link.addEventListener(
                 "click",
-                function (event) {
-
+                function(event) {
 
 
                     const targetID =
@@ -339,7 +327,6 @@ function initializeSmoothScroll() {
                     }
 
 
-
                 }
             );
 
@@ -349,6 +336,7 @@ function initializeSmoothScroll() {
 
 
 }
+
 
 
 
@@ -381,10 +369,10 @@ function initializeHeader() {
 
 
 
+
     window.addEventListener(
         "scroll",
-        function () {
-
+        function() {
 
 
             if (
@@ -408,36 +396,46 @@ function initializeHeader() {
             }
 
 
-
         }
     );
 
 
 }
 
+
+
+
+
+
+// =====================================================
+// END OF MAIN.JS PART 1
+// =====================================================
+
 /*
 =====================================================
  SecureFlow AI Website JavaScript
  main.js
 
- Part 2
+ Part 2 (Final)
 
  Features:
- - Contact form handling
+ - Formspree contact submission
  - Form validation
- - Loading states
- - Back to top button
- - Dynamic year update
- - External links
- - Analytics placeholder
+ - Button loading states
+ - Back-to-top button
+ - Dynamic copyright year
+ - External link handling
 =====================================================
 */
 
 
 
+
+
 // =====================================================
-// CONTACT FORM VALIDATION
+// CONTACT FORM - FORMSPREE SUBMISSION
 // =====================================================
+
 
 function initializeContactForm() {
 
@@ -448,11 +446,16 @@ function initializeContactForm() {
         );
 
 
-    if (!form) {
+
+    if (
+        !form
+    ) {
 
         return;
 
     }
+
+
 
 
 
@@ -461,25 +464,97 @@ function initializeContactForm() {
         async function(event) {
 
 
+            /*
+            Prevent normal browser submission.
+            JavaScript will send data to Formspree.
+            */
+
             event.preventDefault();
 
 
 
-            const button =
+
+            const submitButton =
                 form.querySelector(
-                    "button"
+                    "button[type='submit']"
                 );
 
 
-            button.disabled = true;
 
-            button.innerHTML =
-                "Sending...";
+            const name =
+                form.querySelector(
+                    "input[name='name']"
+                );
 
 
 
-            const data =
-                new FormData(form);
+            const email =
+                form.querySelector(
+                    "input[name='email']"
+                );
+
+
+
+
+            if (
+                name &&
+                name.value.trim() === ""
+            ) {
+
+
+                showFormMessage(
+                    form,
+                    "Please enter your name.",
+                    "error"
+                );
+
+
+                return;
+
+            }
+
+
+
+
+
+            if (
+                email &&
+                !validateEmail(
+                    email.value
+                )
+            ) {
+
+
+                showFormMessage(
+                    form,
+                    "Please enter a valid email address.",
+                    "error"
+                );
+
+
+                return;
+
+            }
+
+
+
+
+
+            setButtonLoading(
+                submitButton,
+                true
+            );
+
+
+
+
+
+            const formData =
+                new FormData(
+                    form
+                );
+
+
 
 
 
@@ -490,25 +565,32 @@ function initializeContactForm() {
                     await fetch(
                         form.action,
                         {
+
                             method:
                                 "POST",
 
                             body:
-                                data,
+                                formData,
 
                             headers:
                             {
-                                Accept:
+
+                                "Accept":
                                 "application/json"
+
                             }
+
                         }
                     );
+
+
 
 
 
                 if (
                     response.ok
                 ) {
+
 
 
                     showFormMessage(
@@ -518,14 +600,26 @@ function initializeContactForm() {
                     );
 
 
+
                     form.reset();
+
+
+
+                    trackEvent(
+                        "lead_submission",
+                        {
+                            source:
+                            "website_contact_form"
+                        }
+                    );
+
 
 
                 } else {
 
 
                     throw new Error(
-                        "Submission failed"
+                        "Form submission failed"
                     );
 
 
@@ -536,6 +630,12 @@ function initializeContactForm() {
             }
             catch(error)
             {
+
+
+                console.error(
+                    error
+                );
+
 
 
                 showFormMessage(
@@ -549,12 +649,12 @@ function initializeContactForm() {
 
 
 
-            button.disabled =
-                false;
 
 
-            button.innerHTML =
-                "Send Enquiry";
+            setButtonLoading(
+                submitButton,
+                false
+            );
 
 
 
@@ -563,6 +663,10 @@ function initializeContactForm() {
 
 
 }
+
+
+
+
 
 
 // =====================================================
@@ -586,6 +690,8 @@ function validateEmail(
 
 
 }
+
+
 
 
 
@@ -634,6 +740,7 @@ function showFormMessage(
 
 
 
+
     messageBox.textContent =
         message;
 
@@ -645,6 +752,7 @@ function showFormMessage(
 
 
 }
+
 
 
 
@@ -672,17 +780,21 @@ function setButtonLoading(
 
 
 
+
     if (
         loading
     ) {
+
 
 
         button.dataset.originalText =
             button.textContent;
 
 
+
         button.textContent =
             "Sending...";
+
 
 
         button.disabled =
@@ -690,14 +802,16 @@ function setButtonLoading(
 
 
 
-    } else {
+    }
+    else
+    {
 
 
 
         button.textContent =
             button.dataset.originalText
             ||
-            "Submit";
+            "Send Enquiry";
 
 
 
@@ -710,6 +824,7 @@ function setButtonLoading(
 
 
 }
+
 
 
 
@@ -755,6 +870,8 @@ function initializeBackToTop() {
 
 
 
+
+
     window.addEventListener(
         "scroll",
         function() {
@@ -771,7 +888,9 @@ function initializeBackToTop() {
                 );
 
 
-            } else {
+            }
+            else
+            {
 
 
                 button.classList.remove(
@@ -789,6 +908,7 @@ function initializeBackToTop() {
 
 
 
+
     button.addEventListener(
         "click",
         function() {
@@ -797,9 +917,11 @@ function initializeBackToTop() {
             window.scrollTo(
                 {
 
-                    top:0,
+                    top:
+                        0,
 
-                    behavior:"smooth"
+                    behavior:
+                        "smooth"
 
                 }
             );
@@ -816,8 +938,9 @@ function initializeBackToTop() {
 
 
 
+
 // =====================================================
-// AUTO UPDATE COPYRIGHT YEAR
+// UPDATE COPYRIGHT YEAR
 // =====================================================
 
 
@@ -859,8 +982,9 @@ function updateCopyrightYear() {
 
 
 
+
 // =====================================================
-// EXTERNAL LINKS
+// EXTERNAL LINK SECURITY
 // =====================================================
 
 
@@ -878,11 +1002,12 @@ function initializeExternalLinks() {
         function(link) {
 
 
+
             if (
-                !link.hostname.includes(
-                    window.location.hostname
-                )
+                link.hostname !==
+                window.location.hostname
             ) {
+
 
 
                 link.setAttribute(
@@ -891,10 +1016,12 @@ function initializeExternalLinks() {
                 );
 
 
+
                 link.setAttribute(
                     "rel",
                     "noopener noreferrer"
                 );
+
 
 
             }
@@ -911,8 +1038,9 @@ function initializeExternalLinks() {
 
 
 
+
 // =====================================================
-// ANALYTICS PLACEHOLDER
+// SIMPLE ANALYTICS EVENT TRACKING
 // =====================================================
 
 
@@ -922,23 +1050,8 @@ function trackEvent(
 ) {
 
 
-    /*
-    Connect your analytics platform here.
-
-    Example:
-
-    Google Analytics:
-    gtag('event', eventName, eventData);
-
-    Matomo:
-    _paq.push(...);
-
-    */
-
-
-
     console.log(
-        "Analytics Event:",
+        "Analytics:",
         eventName,
         eventData
     );
@@ -950,9 +1063,8 @@ function trackEvent(
 
 
 
-
 // =====================================================
-// INITIALISE PART 2 FEATURES
+// INITIALISE PART 2
 // =====================================================
 
 
@@ -963,9 +1075,12 @@ document.addEventListener(
 
         initializeContactForm();
 
+
         initializeBackToTop();
 
+
         updateCopyrightYear();
+
 
         initializeExternalLinks();
 
@@ -980,18 +1095,13 @@ document.addEventListener(
 
 
 // =====================================================
-// END OF PART 2
+// END OF MAIN.JS PART 2
 // =====================================================
 
-
-
-
-// =====================================================
-// END OF PART 1
-// =====================================================
 /*
 =====================================================
  SecureFlow AI Website JavaScript
+
  main.js
 
  Part 3 (Final)
@@ -1002,14 +1112,16 @@ document.addEventListener(
  - Lazy loading
  - Security enhancements
  - Error handling
- - Performance optimisation
+ - Performance monitoring
 =====================================================
 */
 
 
 
+
+
 // =====================================================
-// COOKIE CONSENT BANNER
+// COOKIE CONSENT
 // =====================================================
 
 
@@ -1046,6 +1158,7 @@ function initializeCookieConsent() {
         );
 
 
+
     banner.className =
         "cookie-banner";
 
@@ -1056,26 +1169,24 @@ function initializeCookieConsent() {
         <div class="cookie-content">
 
             <p>
-
-            We use cookies to improve website
-            experience, analyse traffic and
-            maintain security.
-
+            We use cookies to improve your
+            website experience and analyse
+            website traffic.
             </p>
 
 
             <div class="cookie-actions">
 
-                <button
-                class="btn btn-primary"
-                id="acceptCookies">
+                <button 
+                id="acceptCookies"
+                class="btn btn-primary">
 
                     Accept
 
                 </button>
 
 
-                <a
+                <a 
                 href="privacy.html"
                 class="btn btn-outline">
 
@@ -1098,6 +1209,7 @@ function initializeCookieConsent() {
 
 
 
+
     const acceptButton =
         document.getElementById(
             "acceptCookies"
@@ -1105,25 +1217,35 @@ function initializeCookieConsent() {
 
 
 
-    acceptButton.addEventListener(
-        "click",
-        function() {
+    if (
+        acceptButton
+    ) {
 
 
-            localStorage.setItem(
-                consentKey,
-                "accepted"
-            );
+        acceptButton.addEventListener(
+            "click",
+            function() {
 
 
-            banner.remove();
+                localStorage.setItem(
+                    consentKey,
+                    "accepted"
+                );
 
 
-        }
-    );
+                banner.remove();
+
+
+            }
+        );
+
+
+    }
 
 
 }
+
+
 
 
 
@@ -1140,8 +1262,44 @@ function initializeAccessibility() {
 
 
     /*
+    Ensure images have alt text
+    */
+
+
+    const images =
+        document.querySelectorAll(
+            "img"
+        );
+
+
+
+    images.forEach(
+        function(image) {
+
+
+            if (
+                !image.alt
+            ) {
+
+
+                image.alt =
+                    "SecureFlow AI automation service";
+
+
+            }
+
+
+        }
+    );
+
+
+
+
+
+
+    /*
     Add keyboard accessibility
-    to clickable cards
+    to interactive cards
     */
 
 
@@ -1196,42 +1354,6 @@ function initializeAccessibility() {
             );
 
 
-
-        }
-    );
-
-
-
-
-
-    /*
-    Improve external image accessibility
-    */
-
-
-    const images =
-        document.querySelectorAll(
-            "img"
-        );
-
-
-
-    images.forEach(
-        function(image) {
-
-
-            if (
-                !image.alt
-            ) {
-
-
-                image.alt =
-                    "SecureFlow AI service image";
-
-
-            }
-
-
         }
     );
 
@@ -1244,13 +1366,13 @@ function initializeAccessibility() {
 
 
 
+
 // =====================================================
-// LAZY LOAD IMAGES
+// IMAGE LAZY LOADING
 // =====================================================
 
 
 function initializeLazyLoading() {
-
 
 
     const images =
@@ -1271,6 +1393,7 @@ function initializeLazyLoading() {
 
 
 
+
     if (
         "IntersectionObserver"
         in window
@@ -1280,13 +1403,12 @@ function initializeLazyLoading() {
 
         const observer =
             new IntersectionObserver(
-                function(entries, observer) {
+                function(entries) {
 
 
 
                     entries.forEach(
                         function(entry) {
-
 
 
                             if (
@@ -1318,7 +1440,6 @@ function initializeLazyLoading() {
                             }
 
 
-
                         }
                     );
 
@@ -1345,8 +1466,9 @@ function initializeLazyLoading() {
 
 
 
-    } else {
-
+    }
+    else
+    {
 
 
         /*
@@ -1362,13 +1484,11 @@ function initializeLazyLoading() {
                     image.dataset.src;
 
 
-
             }
         );
 
 
     }
-
 
 
 }
@@ -1378,8 +1498,9 @@ function initializeLazyLoading() {
 
 
 
+
 // =====================================================
-// SECURITY HARDENING
+// SECURITY ENHANCEMENTS
 // =====================================================
 
 
@@ -1387,34 +1508,26 @@ function initializeSecurity() {
 
 
     /*
-    Prevent accidental
-    empty javascript links
+    Add noopener protection
+    for external links
     */
 
 
-    const links =
+    const externalLinks =
         document.querySelectorAll(
-            "a"
+            "a[target='_blank']"
         );
 
 
 
-    links.forEach(
+    externalLinks.forEach(
         function(link) {
 
 
-            if (
-                link.href ===
-                "javascript:;"
-            ) {
-
-
-                link.removeAttribute(
-                    "href"
-                );
-
-
-            }
+            link.setAttribute(
+                "rel",
+                "noopener noreferrer"
+            );
 
 
         }
@@ -1424,9 +1537,9 @@ function initializeSecurity() {
 
 
 
+
     /*
-    Prevent clickjacking-related
-    unsafe embedding behaviour
+    Detect iframe embedding
     */
 
 
@@ -1436,7 +1549,7 @@ function initializeSecurity() {
 
 
         console.warn(
-            "Website loaded inside iframe"
+            "SecureFlow AI loaded inside iframe"
         );
 
 
@@ -1451,13 +1564,13 @@ function initializeSecurity() {
 
 
 
+
 // =====================================================
-// GLOBAL ERROR HANDLER
+// GLOBAL ERROR HANDLING
 // =====================================================
 
 
 function initializeErrorHandling() {
-
 
 
     window.addEventListener(
@@ -1473,13 +1586,15 @@ function initializeErrorHandling() {
 
             /*
             Future integration:
-            Send errors to monitoring
-            platform such as Sentry.
+            Send errors to Sentry
+            or monitoring platform.
             */
 
 
         }
     );
+
+
 
 
 
@@ -1505,17 +1620,13 @@ function initializeErrorHandling() {
 
 
 
+
 // =====================================================
-// PERFORMANCE OPTIMISATION
+// PERFORMANCE MONITORING
 // =====================================================
 
 
-function initializePerformance() {
-
-
-    /*
-    Add page load timing capture
-    */
+function initializePerformanceMonitoring() {
 
 
     window.addEventListener(
@@ -1524,28 +1635,35 @@ function initializePerformance() {
 
 
 
-            const loadTime =
-                performance.now();
+            if (
+                performance
+            ) {
+
+
+                const loadTime =
+                    performance.now();
 
 
 
-            trackEvent(
-                "page_loaded",
-                {
+                trackEvent(
+                    "page_load",
+                    {
 
-                    load_time:
-                        Math.round(
-                            loadTime
-                        )
+                        load_time:
+                            Math.round(
+                                loadTime
+                            )
 
-                }
-            );
+                    }
+                );
+
+
+            }
 
 
 
         }
     );
-
 
 
 }
@@ -1555,8 +1673,9 @@ function initializePerformance() {
 
 
 
+
 // =====================================================
-// FINAL INITIALISATION
+// INITIALISE PART 3
 // =====================================================
 
 
@@ -1580,12 +1699,13 @@ document.addEventListener(
         initializeErrorHandling();
 
 
-        initializePerformance();
+        initializePerformanceMonitoring();
 
 
 
     }
 );
+
 
 
 
