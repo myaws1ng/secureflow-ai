@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+=====================================================
+ SecureFlow AI Sitemap
+
+ Purpose:
+ - Help search engines discover website pages
+ - Improve SEO indexing
+ - Define page importance
+=====================================================
+-->
+
+
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+
+<!-- ================================================= -->
+<!-- MAIN WEBSITE -->
+<!-- ================================================= -->
+
+
+<url>
+
+    <loc>
+    https://secureflow.ai/
+    </loc>
+
+    <lastmod>
+    2026-07-27
+    </lastmod>
+
+    <changefreq>
+    weekly
+    </changefreq>
+
+    <priority>
+    1.0
+    </priority>
+
+</url>
+
+
+
+
+
+<!-- ================================================= -->
+<!-- SERVICES -->
+<!-- ================================================= -->
+
+
+<url>
+
+    <loc>
+    https://secureflow.ai/services.html
+    </loc>
+
+    <lastmod>
+    2026-07-27
+    </lastmod>
+
+    <changefreq>
+    monthly
+    </changefreq>
+
+    <priority>
+    0.9
+    </priority>
+
+</url>
+
+
+
+
+
+<!-- ================================================= -->
+<!-- PRICING -->
+<!-- ================================================= -->
+
+
+<url>
+
+    <loc>
+    https://secureflow.ai/pricing.html
+    </loc>
+
+    <lastmod>
+    2026-07-27
+    </lastmod>
+
+    <changefreq>
+    monthly
+    </changefreq>
+
+    <priority>
+    0.8
+    </priority>
+
+</url>
+
+
+
+
+
+<!-- ================================================= -->
+<!-- CASE STUDIES -->
+<!-- ================================================= -->
+
+
+<url>
+
+    <loc>
+    https://secureflow.ai/case-studies.html
+    </loc>
+
+    <lastmod>
+    2026-07-27
+    </lastmod>
+
+    <changefreq>
+    monthly
+    </changefreq>
+
+    <priority>
+    0.8
+    </priority>
+
+</url>
+
+
+
+
+
+<!-- ================================================= -->
+<!-- ABOUT -->
+<!-- ================================================= -->
+
+
+<url>
+
+    <loc>
+    https://secureflow.ai/about.html
+    </loc>
+
+    <lastmod>
+    2026-07-27
+    </lastmod>
+
+    <changefreq>
+    yearly
+    </changefreq>
+
+    <priority>
+    0.7
+    </priority>
+
+</url>
+
+
+
+<!-- CONTINUE WITH PART 2 -->
+  <!-- ================================================= -->
+<!-- FAQ PAGE -->
+<!-- ================================================= -->
+
+
+<url>
+
+    <loc>
+    https://secureflow.ai/faq.html
+    </loc>
+
+    <lastmod>
+    2026-07-27
+    </lastmod>
+
+    <changefreq>
+    monthly
+    </changefreq>
+
+    <priority>
+    0.8
+    </priority>
+
+</url>
+
+
+
+
+
+<!-- ================================================= -->
+<!-- CONTACT PAGE -->
+<!-- ================================================= -->
+
+
+<url>
+
+    <loc>
+    https://secureflow.ai/contact.html
+    </loc>
+
+    <lastmod>
+    2026-07-27
+    </lastmod>
+
+    <changefreq>
+    monthly
+    </changefreq>
+
+    <priority>
+    0.9
+    </priority>
+
+</url>
+
+
+
+
+
+<!-- ================================================= -->
+<!-- PRIVACY POLICY -->
+<!-- ================================================= -->
+
+
+<url>
+
+    <loc>
+    https://secureflow.ai/privacy.html
+    </loc>
+
+    <lastmod>
+    2026-07-27
+    </lastmod>
+
+    <changefreq>
+    yearly
+    </changefreq>
+
+    <priority>
+    0.5
+    </priority>
+
+</url>
+
+
+
+
+
+<!-- ================================================= -->
+<!-- TERMS AND CONDITIONS -->
+<!-- ================================================= -->
+
+
+<url>
+
+    <loc>
+    https://secureflow.ai/terms.html
+    </loc>
+
+    <lastmod>
+    2026-07-27
+    </lastmod>
+
+    <changefreq>
+    yearly
+    </changefreq>
+
+    <priority>
+    0.5
+    </priority>
+
+</url>
+
+
+
+
+
+<!-- ================================================= -->
+<!-- SERVICE LANDING PAGES -->
+<!-- Add future pages here -->
+<!-- ================================================= -->
+
+
+<!--
+
+Example:
+
+
+<url>
+
+    <loc>
+    https://secureflow.ai/ai-consulting.html
+    </loc>
+
+    <lastmod>
+    2026-07-27
+    </lastmod>
+
+    <changefreq>
+    monthly
+    </changefreq>
+
+    <priority>
+    0.8
+    </priority>
+
+</url>
+
+
+-->
+
+
+
+
+
+<!-- ================================================= -->
+<!-- RESOURCE / BLOG SECTION -->
+<!-- ================================================= -->
+
+
+<!--
+
+Future SEO content pages:
+
+- AI automation guides
+- Small business AI case studies
+- Workflow automation tutorials
+- Industry-specific solutions
+
+
+Example:
+
+
+<url>
+
+    <loc>
+    https://secureflow.ai/blog.html
+    </loc>
+
+    <lastmod>
+    2026-07-27
+    </lastmod>
+
+    <changefreq>
+    weekly
+    </changefreq>
+
+    <priority>
+    0.8
+    </priority>
+
+</url>
+
+
+-->
+
+
+
+
+
+<!-- ================================================= -->
+<!-- IMAGE SITEMAP PREPARATION -->
+<!-- ================================================= -->
+
+
+<!--
+
+Future image sitemap entries can be added
+using the image namespace:
+
+xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+
+
+Example:
+
+
+<image:image>
+
+    <image:loc>
+    https://secureflow.ai/images/ai-automation.jpg
+    </image:loc>
+
+</image:image>
+
+
+-->
+
+
+
+
+
+<!-- ================================================= -->
+<!-- END OF SITEMAP PART 2 -->
+<!-- ================================================= -->
+  <!-- ================================================= -->
+<!-- OPTIONAL IMAGE SITEMAP SUPPORT -->
+<!-- ================================================= -->
+
+<!--
+To enable image sitemap support,
+add this namespace to the urlset:
+
+xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+
+Example:
+
+<url>
+
+    <loc>
+    https://secureflow.ai/services.html
+    </loc>
+
+
+    <image:image>
+
+        <image:loc>
+        https://secureflow.ai/images/ai-automation.jpg
+        </image:loc>
+
+
+        <image:title>
+        AI Automation Services
+        </image:title>
+
+
+    </image:image>
+
+
+</url>
+
+-->
+
+
+
+
+
+<!-- ================================================= -->
+<!-- OPTIONAL VIDEO SITEMAP SUPPORT -->
+<!-- ================================================= -->
+
+<!--
+If SecureFlow AI publishes videos in the future,
+video sitemap entries can be added.
+
+Example:
+
+<video:video>
+
+    <video:thumbnail_loc>
+    https://secureflow.ai/images/video-thumb.jpg
+    </video:thumbnail_loc>
+
+
+    <video:title>
+    AI Automation Explained
+    </video:title>
+
+
+    <video:description>
+    Learn how small businesses can use AI automation.
+    </video:description>
+
+
+</video:video>
+
+-->
+
+
+
+
+
+<!-- ================================================= -->
+<!-- FINAL URLSET CLOSING -->
+<!-- ================================================= -->
+
+
+</urlset>
+
+
+
+
+
+<!-- ================================================= -->
+<!-- SITEMAP MAINTENANCE NOTES
+=====================================================
+
+Recommended maintenance:
+
+1. Update lastmod when pages change significantly.
+
+2. Add new service pages when created.
+
+3. Add blog articles for SEO growth.
+
+4. Submit sitemap to:
+
+Google Search Console:
+https://search.google.com/search-console
+
+Bing Webmaster Tools:
+https://www.bing.com/webmasters/
+
+
+5. Keep sitemap below:
+- 50,000 URLs
+- 50MB uncompressed size
+
+
+=====================================================
+ END OF SECUREFLOW AI SITEMAP
+===================================================== -->
